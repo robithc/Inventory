@@ -81,7 +81,6 @@ public class EditorActivity extends AppCompatActivity implements
         callSupplierButton = (Button) findViewById(R.id.call_supplier_button);
 
 
-
         // If the intent DOES NOT contain a book content URI, then we know that we are
         // creating a new book.
         if (mCurrentBookUri == null) {

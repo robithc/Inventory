@@ -179,7 +179,15 @@
         android:text="@string/tap_photo"
         tools:text="tap to add photo" />
     <Button
+        android:layout_width="@dimen/call"
         android:id="@+id/call_supplier_button"
+        android:layout_height="@dimen/call"
+        android:layout_margin="4dp"
+        android:layout_gravity="center"
+
+        android:background="@drawable/baseline_call_black_36dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
