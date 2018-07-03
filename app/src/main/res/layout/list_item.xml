@@ -92,7 +92,7 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:focusableInTouchMode="true"
-        android:minWidth="30dp"
+        android:minWidth="20dp"
         android:src="@drawable/baseline_shopping_cart_black_36dp" />
 
 </LinearLayout>

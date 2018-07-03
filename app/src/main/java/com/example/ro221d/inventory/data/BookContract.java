@@ -6,9 +6,7 @@ import android.provider.BaseColumns;
 
 public final class BookContract {
 
-
     public static final String LOG_TAG = BookProvider.class.getSimpleName();
-
 
     // To prevent someone from accidentally instantiating the contract class,
     // give it an empty constructor.

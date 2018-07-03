@@ -22,7 +22,6 @@ import com.example.ro221d.inventory.data.BookContract.BookEntry;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
     private static final int PRODUCT_LOADER = 0;
 
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 startActivity(intent);
             }
         });
-
 
         ListView bookListView = (ListView) findViewById(R.id.list);
         View emptyView = findViewById(R.id.empty_view);
@@ -67,14 +65,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 // Launch the EditorActivity to display the data for the current product
                 startActivity(intent);
-
             }
         });
 
         // Kick off the loader
         getSupportLoaderManager().initLoader(PRODUCT_LOADER, null, this);
     }
-
 
     private void insertBook() {
 
@@ -93,14 +89,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(BookEntry.COLUMN_BOOK_PRICE, 50.99);
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, 7);
         values.put(BookEntry.COLUMN_BOOK_PICTURE, String.valueOf(imageUri));
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, "adam");
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER, 5555);
-
-
+        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, "John Smith");
+        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER, 55553333);
 
         Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,7 +117,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {

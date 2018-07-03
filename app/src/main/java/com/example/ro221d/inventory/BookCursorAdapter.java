@@ -15,9 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.ro221d.inventory.data.BookContract;
-
 import static android.content.ContentValues.TAG;
 
 public class BookCursorAdapter extends CursorAdapter {

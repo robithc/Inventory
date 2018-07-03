@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
+    android:layout_margin="8dp">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
@@ -31,9 +38,9 @@
 
         <EditText
             android:id="@+id/book_name_edit_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/insert"
             android:inputType="text" />
     </LinearLayout>
@@ -56,7 +63,7 @@
             android:id="@+id/book_description_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/insert"
             android:inputType="text" />
     </LinearLayout>
@@ -77,9 +84,9 @@
 
         <EditText
             android:id="@+id/book_price_edit_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/insert"
             android:inputType="numberDecimal" />
     </LinearLayout>
@@ -100,9 +107,9 @@
 
         <EditText
             android:id="@+id/book_quantity_edit_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/insert"
             android:inputType="numberDecimal" />
     </LinearLayout>
@@ -123,9 +130,9 @@
 
         <EditText
             android:id="@+id/book_supplier_name_edit_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/insert"
             android:inputType="text" />
     </LinearLayout>
@@ -146,9 +153,9 @@
 
         <EditText
             android:id="@+id/book_supplier_number_edit_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/insert"
             android:inputType="number" />
 
@@ -160,6 +167,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:minHeight="100dp"
+        android:contentDescription="@string/image_description"
         android:minWidth="100dp"
         tools:background="@drawable/example_cover" />
 
@@ -192,6 +200,6 @@
             android:layout_weight="1"
             android:text="@string/add_book_button" />
 
-
     </LinearLayout>
 </LinearLayout>
+</ScrollView>
