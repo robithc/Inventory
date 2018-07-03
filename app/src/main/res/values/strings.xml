@@ -57,5 +57,6 @@
     <string name="price_header">price</string>
     <string name="quantity_header">quantity</string>
     <string name="image_description">image</string>
+    <string name="action_call_supplier">call supplier</string>
 
 </resources>
