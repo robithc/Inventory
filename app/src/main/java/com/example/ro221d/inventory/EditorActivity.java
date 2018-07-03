@@ -50,6 +50,7 @@ public class EditorActivity extends AppCompatActivity implements
     private TextView mTapPhotoHintText;
     private Button mAddBookButton;
     private Button mRejectBookButton;
+    private Button callSupplierButton;
     private boolean mBookHasChanged = false;
     private View.OnTouchListener mTouchListener = new View.OnTouchListener() {
         @Override
@@ -77,6 +78,8 @@ public class EditorActivity extends AppCompatActivity implements
         mAddBookButton = (Button) findViewById(R.id.add_book_button);
         mRejectBookButton = (Button) findViewById(R.id.reject_book_button);
         mTapPhotoHintText = (TextView) findViewById(R.id.tap_photo_text_view);
+        callSupplierButton = (Button) findViewById(R.id.call_supplier_button);
+
 
 
         // If the intent DOES NOT contain a book content URI, then we know that we are
@@ -91,6 +94,7 @@ public class EditorActivity extends AppCompatActivity implements
             mPhoto.setImageResource(R.drawable.icons8_empty_box_48);
             mAddBookButton.setVisibility(View.GONE);
             mRejectBookButton.setVisibility(View.GONE);
+            callSupplierButton.setVisibility(View.GONE);
             invalidateOptionsMenu();
 
         } else {
@@ -102,6 +106,7 @@ public class EditorActivity extends AppCompatActivity implements
             mBookQuantityEditText.setEnabled(false);
             mAddBookButton.setVisibility(View.VISIBLE);
             mRejectBookButton.setVisibility(View.VISIBLE);
+            callSupplierButton.setVisibility(View.VISIBLE);
 
             getSupportLoaderManager().initLoader(EXISTING_BOOK_LOADER, null, this);
         }
@@ -113,6 +118,7 @@ public class EditorActivity extends AppCompatActivity implements
         mBookSupplierNumberEditText.setOnTouchListener(mTouchListener);
         mAddBookButton.setOnTouchListener(mTouchListener);
         mRejectBookButton.setOnTouchListener(mTouchListener);
+        callSupplierButton.setOnTouchListener(mTouchListener);
 
 
         mAddBookButton.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +140,14 @@ public class EditorActivity extends AppCompatActivity implements
             public void onClick(View view) {
                 trySelector();
                 mBookHasChanged = true;
+            }
+        });
+
+        callSupplierButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String number = mBookSupplierNumberEditText.getText().toString();
+                callSupplier(number);
             }
         });
     }
