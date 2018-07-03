@@ -51,7 +51,6 @@ public class EditorActivity extends AppCompatActivity implements
     private Button mAddBookButton;
     private Button mRejectBookButton;
     private boolean mBookHasChanged = false;
-    private int mCurrentQuantity = 0;
     private View.OnTouchListener mTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -319,6 +318,11 @@ public class EditorActivity extends AppCompatActivity implements
                 showDeleteConfirmationDialog();
                 return true;
             // Respond to a click on the "Up" arrow button in the app bar
+
+            case R.id.action_call_supplier:
+                String number = mBookSupplierNumberEditText.getText().toString();
+                callSupplier(number);
+                return true;
             case android.R.id.home:
                 if (!mBookHasChanged) {
                     NavUtils.navigateUpFromSameTask(EditorActivity.this);
@@ -529,4 +533,14 @@ public class EditorActivity extends AppCompatActivity implements
     public void displayQuantity() {
         mBookQuantityEditText.setText(String.valueOf(mQuantity));
     }
+
+    public void callSupplier(String number) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        number = mBookSupplierNumberEditText.getText().toString();
+        intent.setData(Uri.parse("tel:" + number));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 }
+
